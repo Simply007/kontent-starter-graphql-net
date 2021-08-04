@@ -11,6 +11,10 @@
 
 1. Run the application
 
+   ```sh
+   dotnet run -p ./GraphQLWebStarter
+   ```
+
 ## About
 
 All code is in `HomeController` and it is using [`GraphQL.Client` package](https://github.com/graphql-dotnet/graphql-client) and `GraphQL.Client.Serializer.Newtonsoft` for serialization.
