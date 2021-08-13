@@ -2,6 +2,28 @@
 
 ## Get started
 
+### Prerequisites
+
+* [Node.js](https://nodejs.org/en/)
+* [Dotnet 5.0](https://www.microsoft.com/net/download/core)
+
+### Generate models
+
+1. Enter the project toot directory (with `GraphQLWebStarter.sln` file)
+1. Install dependencies
+
+    ```sh
+    npm i
+    ```
+
+1. Run the application
+
+   ```sh
+   npm run generate:models
+   ```
+
+### Start
+
 1. Enter the project toot directory (with `GraphQLWebStarter.sln` file)
 1. Install dependencies
 
