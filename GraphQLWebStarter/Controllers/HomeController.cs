@@ -2,6 +2,7 @@
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
 using GraphQLWebStarter.Models;
+using GraphQLWebStarter.Models.Generated;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
