@@ -34,7 +34,7 @@
 1. Run the application
 
    ```sh
-   dotnet run -p ./GraphQLWebStarter
+   dotnet run --project ./GraphQLWebStarter
    ```
 
 ## About

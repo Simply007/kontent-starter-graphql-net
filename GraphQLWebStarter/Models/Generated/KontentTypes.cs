@@ -1612,7 +1612,7 @@ namespace GraphQLWebStarter.Models.Generated {
       public RichText content { get; set; }
     
       [JsonProperty("publishingDate")]
-      public dynamic publishingDate { get; set; }
+      public DateTime publishingDate { get; set; }
     
       [JsonProperty("author")]
       public ItemsCollection author { get; set; }
@@ -1668,11 +1668,11 @@ namespace GraphQLWebStarter.Models.Generated {
     
       public string excerptEq { get; set; }
     
-      public dynamic publishingDateEq { get; set; }
+      public DateTime? publishingDateEq { get; set; }
     
-      public dynamic publishingDateGt { get; set; }
+      public DateTime? publishingDateGt { get; set; }
     
-      public dynamic publishingDateLt { get; set; }
+      public DateTime? publishingDateLt { get; set; }
     
       public string authorLinksCodename { get; set; }
     
@@ -2123,7 +2123,7 @@ namespace GraphQLWebStarter.Models.Generated {
       public double numberElement { get; set; }
     
       [JsonProperty("dateTimeElement")]
-      public dynamic dateTimeElement { get; set; }
+      public DateTime dateTimeElement { get; set; }
     
       [JsonProperty("customElement")]
       public CustomElement customElement { get; set; }
@@ -2174,11 +2174,11 @@ namespace GraphQLWebStarter.Models.Generated {
     
       public int? numberElementLt { get; set; }
     
-      public dynamic dateTimeElementEq { get; set; }
+      public DateTime? dateTimeElementEq { get; set; }
     
-      public dynamic dateTimeElementGt { get; set; }
+      public DateTime? dateTimeElementGt { get; set; }
     
-      public dynamic dateTimeElementLt { get; set; }
+      public DateTime? dateTimeElementLt { get; set; }
     
       public string personaLinksTerm { get; set; }
     
@@ -2295,7 +2295,7 @@ namespace GraphQLWebStarter.Models.Generated {
       public ContentType type { get; set; }
     
       [JsonProperty("lastModified")]
-      public dynamic lastModified { get; set; }
+      public DateTime lastModified { get; set; }
     
       [JsonProperty("collection")]
       public Collection collection { get; set; }
@@ -2304,7 +2304,7 @@ namespace GraphQLWebStarter.Models.Generated {
       public WorkflowStep workflowStep { get; set; }
     
       [JsonProperty("id")]
-      public dynamic id { get; set; }
+      public Guid id { get; set; }
       #endregion
     }
     #endregion

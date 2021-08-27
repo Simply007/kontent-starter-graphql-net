@@ -11,6 +11,10 @@ generates:
       namingConvention: change-case-all#upperCaseFirst
       # TODO discuss proper and walkthrough all tynamic types
       defaultScalarType: dynamic
+      scalars:
+        DateTime: DateTime
+        Guid: Guid
+        
   ./graphql.schema.json:
     plugins:
       - "introspection"
