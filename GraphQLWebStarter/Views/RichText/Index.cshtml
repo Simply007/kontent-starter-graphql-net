@@ -1,0 +1,11 @@
+@model SimplePageViewModel
+
+@{
+    ViewData["Title"] = "Simple Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.SimplePage.title</h1>
+    <div>@Model.SimplePage.subtitle</div>
+</div>
+<div>@Html.Raw(Model.SimplePage.content.html)</div>
