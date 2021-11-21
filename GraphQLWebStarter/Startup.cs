@@ -1,3 +1,6 @@
+using GraphQL.Client.Abstractions;
+using GraphQL.Client.Http;
+using GraphQL.Client.Serializer.Newtonsoft;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +27,8 @@ namespace GraphQLWebStarter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddSingleton<IGraphQLClient>(new GraphQLHttpClient("https://graphql.kontent.ai/ad25961e-f934-01dc-e1fa-f4dd41b84df2", new NewtonsoftJsonSerializer()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

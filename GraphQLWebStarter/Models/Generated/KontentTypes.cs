@@ -7,35 +7,44 @@ namespace GraphQLWebStarter.Models.Generated {
   public class KontentTypes {
     
     #region Action
-    public class Action : Item {
+    public class Action : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("label")]
       public string label { get; set; }
     
       [JsonProperty("navigationItem")]
-      public ItemsCollection navigationItem { get; set; }
+      public Action_NavigationItem navigationItem { get; set; }
     
       [JsonProperty("icon")]
-      public ItemsCollection icon { get; set; }
+      public Icon icon { get; set; }
     
       [JsonProperty("role")]
-      public List<MultipleChoiceOption> role { get; set; }
+      public _MultipleChoiceOptionCollection role { get; set; }
     
       [JsonProperty("options")]
-      public List<MultipleChoiceOption> options { get; set; }
+      public _MultipleChoiceOptionCollection options { get; set; }
       #endregion
     }
     #endregion
     
-    #region ActionCollection
-    public class ActionCollection {
+    #region Action_All
+    public class Action_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -45,16 +54,20 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ActionWhere
-    public class ActionWhere {
+    #region Action_Where
+    public class Action_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string labelEq { get; set; }
+      public _TextFilter label { get; set; }
     
-      public string navigationItemLinksCodename { get; set; }
+      public _ArrayFilter navigationItem { get; set; }
     
-      public string iconLinksCodename { get; set; }
+      public _ArrayFilter icon { get; set; }
+    
+      public _ArrayFilter role { get; set; }
+    
+      public _ArrayFilter options { get; set; }
       #endregion
     
       #region methods
@@ -81,50 +94,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region Asset
-    public class Asset {
-      #region members
-      [JsonProperty("url")]
-      public string url { get; set; }
-    
-      [JsonProperty("name")]
-      public string name { get; set; }
-    
-      [JsonProperty("description")]
-      public string description { get; set; }
-    
-      [JsonProperty("type")]
-      public string type { get; set; }
-    
-      [JsonProperty("size")]
-      public int? size { get; set; }
-    
-      [JsonProperty("imageId")]
-      public string imageId { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region AssetCollection
-    public class AssetCollection {
-      #region members
-      [JsonProperty("offset")]
-      public int offset { get; set; }
-    
-      [JsonProperty("limit")]
-      public int limit { get; set; }
-    
-      [JsonProperty("items")]
-      public List<Asset> items { get; set; }
-      #endregion
-    }
-    #endregion
-    
     #region Author
-    public class Author : Item {
+    public class Author : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("firstName")]
       public string firstName { get; set; }
@@ -136,17 +113,23 @@ namespace GraphQLWebStarter.Models.Generated {
       public string bio { get; set; }
     
       [JsonProperty("photo")]
-      public List<Asset> photo { get; set; }
+      public _AssetCollection photo { get; set; }
       #endregion
     }
     #endregion
     
-    #region AuthorCollection
-    public class AuthorCollection {
+    #region Author_All
+    public class Author_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -156,16 +139,16 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region AuthorWhere
-    public class AuthorWhere {
+    #region Author_Where
+    public class Author_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string firstNameEq { get; set; }
+      public _TextFilter firstName { get; set; }
     
-      public string lastNameEq { get; set; }
+      public _TextFilter lastName { get; set; }
     
-      public string bioEq { get; set; }
+      public _TextFilter bio { get; set; }
       #endregion
     
       #region methods
@@ -193,10 +176,13 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region BaseFormField
-    public class BaseFormField : Item {
+    public class BaseFormField : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("label")]
       public string label { get; set; }
@@ -205,23 +191,29 @@ namespace GraphQLWebStarter.Models.Generated {
       public string name { get; set; }
     
       [JsonProperty("type")]
-      public List<MultipleChoiceOption> type { get; set; }
+      public _MultipleChoiceOptionCollection type { get; set; }
     
       [JsonProperty("defaultValue")]
       public string defaultValue { get; set; }
     
       [JsonProperty("configuration")]
-      public List<MultipleChoiceOption> configuration { get; set; }
+      public _MultipleChoiceOptionCollection configuration { get; set; }
       #endregion
     }
     #endregion
     
-    #region BaseFormFieldCollection
-    public class BaseFormFieldCollection {
+    #region BaseFormField_All
+    public class BaseFormField_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -231,16 +223,20 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region BaseFormFieldWhere
-    public class BaseFormFieldWhere {
+    #region BaseFormField_Where
+    public class BaseFormField_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string labelEq { get; set; }
+      public _TextFilter label { get; set; }
     
-      public string nameEq { get; set; }
+      public _TextFilter name { get; set; }
     
-      public string defaultValueEq { get; set; }
+      public _ArrayFilter type { get; set; }
+    
+      public _TextFilter defaultValue { get; set; }
+    
+      public _ArrayFilter configuration { get; set; }
       #endregion
     
       #region methods
@@ -268,23 +264,32 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region CodeBlock
-    public class CodeBlock : Item {
+    public class CodeBlock : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("code")]
-      public RichText code { get; set; }
+      public _RichText code { get; set; }
       #endregion
     }
     #endregion
     
-    #region CodeBlockCollection
-    public class CodeBlockCollection {
+    #region CodeBlock_All
+    public class CodeBlock_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -294,10 +299,10 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region CodeBlockWhere
-    public class CodeBlockWhere {
+    #region CodeBlock_Where
+    public class CodeBlock_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
       #endregion
     
       #region methods
@@ -324,54 +329,42 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region Collection
-    public class Collection {
-      #region members
-      [JsonProperty("system")]
-      public CollectionSys system { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region CollectionSys
-    public class CollectionSys {
-      #region members
-      [JsonProperty("name")]
-      public string name { get; set; }
-    
-      [JsonProperty("codename")]
-      public string codename { get; set; }
-      #endregion
-    }
-    #endregion
-    
     #region ContactSection
-    public class ContactSection : Item {
+    public class ContactSection : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("subtitle")]
-      public RichText subtitle { get; set; }
+      public _RichText subtitle { get; set; }
     
       [JsonProperty("content")]
-      public RichText content { get; set; }
+      public _RichText content { get; set; }
     
       [JsonProperty("form")]
-      public ItemsCollection form { get; set; }
+      public Form form { get; set; }
       #endregion
     }
     #endregion
     
-    #region ContactSectionCollection
-    public class ContactSectionCollection {
+    #region ContactSection_All
+    public class ContactSection_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -381,14 +374,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ContactSectionWhere
-    public class ContactSectionWhere {
+    #region ContactSection_Where
+    public class ContactSection_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string formLinksCodename { get; set; }
+      public _ArrayFilter form { get; set; }
       #endregion
     
       #region methods
@@ -416,32 +409,62 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region ContentSection
-    public class ContentSection : Item {
+    public class ContentSection : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("image")]
-      public List<Asset> image { get; set; }
+      public _Asset image { get; set; }
     
       [JsonProperty("content")]
-      public RichText content { get; set; }
+      public _RichText content { get; set; }
     
       [JsonProperty("actions")]
-      public ItemsCollection actions { get; set; }
+      public ContentSection_Actions_Collection actions { get; set; }
       #endregion
     }
     #endregion
     
-    #region ContentSectionCollection
-    public class ContentSectionCollection {
+    #region ContentSection_Actions_Collection
+    public class ContentSection_Actions_Collection {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      [JsonProperty("items")]
+      public List<Action> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region ContentSection_All
+    public class ContentSection_All {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -451,14 +474,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ContentSectionWhere
-    public class ContentSectionWhere {
+    #region ContentSection_Where
+    public class ContentSection_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string actionsLinksCodename { get; set; }
+      public _ArrayFilter actions { get; set; }
       #endregion
     
       #region methods
@@ -485,51 +508,39 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ContentType
-    public class ContentType {
-      #region members
-      [JsonProperty("system")]
-      public ContentTypeSys system { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region ContentTypeSys
-    public class ContentTypeSys {
-      #region members
-      [JsonProperty("name")]
-      public string name { get; set; }
-    
-      [JsonProperty("codename")]
-      public string codename { get; set; }
-      #endregion
-    }
-    #endregion
-    
     #region CtaSection
-    public class CtaSection : Item {
+    public class CtaSection : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("subtitle")]
-      public RichText subtitle { get; set; }
+      public _RichText subtitle { get; set; }
     
       [JsonProperty("action")]
-      public ItemsCollection action { get; set; }
+      public Action action { get; set; }
       #endregion
     }
     #endregion
     
-    #region CtaSectionCollection
-    public class CtaSectionCollection {
+    #region CtaSection_All
+    public class CtaSection_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -539,14 +550,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region CtaSectionWhere
-    public class CtaSectionWhere {
+    #region CtaSection_Where
+    public class CtaSection_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string actionLinksCodename { get; set; }
+      public _ArrayFilter action { get; set; }
       #endregion
     
       #region methods
@@ -573,20 +584,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region CustomElement
-    public class CustomElement {
-      #region members
-      [JsonProperty("value")]
-      public string value { get; set; }
-      #endregion
-    }
-    #endregion
-    
     #region ExternalUrl
-    public class ExternalUrl : Item {
+    public class ExternalUrl : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("url")]
       public string url { get; set; }
@@ -594,12 +599,18 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ExternalUrlCollection
-    public class ExternalUrlCollection {
+    #region ExternalUrl_All
+    public class ExternalUrl_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -609,12 +620,12 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ExternalUrlWhere
-    public class ExternalUrlWhere {
+    #region ExternalUrl_Where
+    public class ExternalUrl_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string urlEq { get; set; }
+      public _TextFilter url { get; set; }
       #endregion
     
       #region methods
@@ -642,32 +653,62 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region Feature
-    public class Feature : Item {
+    public class Feature : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("image")]
-      public List<Asset> image { get; set; }
+      public _Asset image { get; set; }
     
       [JsonProperty("content")]
-      public RichText content { get; set; }
+      public _RichText content { get; set; }
     
       [JsonProperty("actions")]
-      public ItemsCollection actions { get; set; }
+      public Feature_Actions_Collection actions { get; set; }
       #endregion
     }
     #endregion
     
-    #region FeatureCollection
-    public class FeatureCollection {
+    #region Feature_Actions_Collection
+    public class Feature_Actions_Collection {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      [JsonProperty("items")]
+      public List<Action> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region Feature_All
+    public class Feature_All {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -677,14 +718,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region FeatureWhere
-    public class FeatureWhere {
+    #region Feature_Where
+    public class Feature_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string actionsLinksCodename { get; set; }
+      public _ArrayFilter actions { get; set; }
       #endregion
     
       #region methods
@@ -712,29 +753,38 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region FeaturesSection
-    public class FeaturesSection : Item {
+    public class FeaturesSection : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("subtitle")]
-      public RichText subtitle { get; set; }
+      public _RichText subtitle { get; set; }
     
       [JsonProperty("features")]
-      public ItemsCollection features { get; set; }
+      public FeaturesSection_Features_Collection features { get; set; }
       #endregion
     }
     #endregion
     
-    #region FeaturesSectionCollection
-    public class FeaturesSectionCollection {
+    #region FeaturesSection_All
+    public class FeaturesSection_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -744,14 +794,35 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region FeaturesSectionWhere
-    public class FeaturesSectionWhere {
+    #region FeaturesSection_Features_Collection
+    public class FeaturesSection_Features_Collection {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
     
-      public string titleEq { get; set; }
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
     
-      public string featuresLinksCodename { get; set; }
+      [JsonProperty("items")]
+      public List<Feature> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region FeaturesSection_Where
+    public class FeaturesSection_Where {
+      #region members
+      public _SystemFilter _system_ { get; set; }
+    
+      public _TextFilter title { get; set; }
+    
+      public _ArrayFilter features { get; set; }
       #endregion
     
       #region methods
@@ -779,10 +850,13 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region Form
-    public class Form : Item {
+    public class Form : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
@@ -791,7 +865,7 @@ namespace GraphQLWebStarter.Models.Generated {
       public string content { get; set; }
     
       [JsonProperty("fields")]
-      public ItemsCollection fields { get; set; }
+      public Form_Fields_Collection fields { get; set; }
     
       [JsonProperty("submitLabel")]
       public string submitLabel { get; set; }
@@ -805,12 +879,18 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region FormCollection
-    public class FormCollection {
+    #region Form_All
+    public class Form_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -820,22 +900,43 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region FormWhere
-    public class FormWhere {
+    #region Form_Fields_Collection
+    public class Form_Fields_Collection {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
     
-      public string titleEq { get; set; }
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
     
-      public string contentEq { get; set; }
+      [JsonProperty("items")]
+      public List<Form_Fields> items { get; set; }
+      #endregion
+    }
+    #endregion
     
-      public string fieldsLinksCodename { get; set; }
+    #region Form_Where
+    public class Form_Where {
+      #region members
+      public _SystemFilter _system_ { get; set; }
     
-      public string submitLabelEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string formIdEq { get; set; }
+      public _TextFilter content { get; set; }
     
-      public string formActionEq { get; set; }
+      public _ArrayFilter fields { get; set; }
+    
+      public _TextFilter submitLabel { get; set; }
+    
+      public _TextFilter formId { get; set; }
+    
+      public _TextFilter formAction { get; set; }
       #endregion
     
       #region methods
@@ -863,32 +964,62 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region HeroSection
-    public class HeroSection : Item {
+    public class HeroSection : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("image")]
-      public List<Asset> image { get; set; }
+      public _Asset image { get; set; }
     
       [JsonProperty("content")]
-      public RichText content { get; set; }
+      public _RichText content { get; set; }
     
       [JsonProperty("actions")]
-      public ItemsCollection actions { get; set; }
+      public HeroSection_Actions_Collection actions { get; set; }
       #endregion
     }
     #endregion
     
-    #region HeroSectionCollection
-    public class HeroSectionCollection {
+    #region HeroSection_Actions_Collection
+    public class HeroSection_Actions_Collection {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      [JsonProperty("items")]
+      public List<Action> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region HeroSection_All
+    public class HeroSection_All {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -898,14 +1029,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region HeroSectionWhere
-    public class HeroSectionWhere {
+    #region HeroSection_Where
+    public class HeroSection_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string actionsLinksCodename { get; set; }
+      public _ArrayFilter actions { get; set; }
       #endregion
     
       #region methods
@@ -933,16 +1064,19 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region Homepage
-    public class Homepage : Item {
+    public class Homepage : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("subpages")]
-      public ItemsCollection subpages { get; set; }
+      public Homepage_Subpages_Collection subpages { get; set; }
     
       [JsonProperty("content")]
-      public ItemsCollection content { get; set; }
+      public Homepage_Content content { get; set; }
     
       [JsonProperty("slug")]
       public string slug { get; set; }
@@ -951,53 +1085,44 @@ namespace GraphQLWebStarter.Models.Generated {
       public string label { get; set; }
     
       [JsonProperty("headerLogo")]
-      public List<Asset> headerLogo { get; set; }
+      public _Asset headerLogo { get; set; }
     
       [JsonProperty("mainMenu")]
-      public ItemsCollection mainMenu { get; set; }
+      public Menu mainMenu { get; set; }
     
       [JsonProperty("copyright")]
-      public RichText copyright { get; set; }
+      public _RichText copyright { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("font")]
-      public List<MultipleChoiceOption> font { get; set; }
+      public _MultipleChoiceOptionCollection font { get; set; }
     
       [JsonProperty("favicon")]
-      public List<Asset> favicon { get; set; }
+      public _Asset favicon { get; set; }
     
       [JsonProperty("palette")]
-      public List<MultipleChoiceOption> palette { get; set; }
+      public _MultipleChoiceOptionCollection palette { get; set; }
     
-      [JsonProperty("seoTitle")]
-      public string seoTitle { get; set; }
-    
-      [JsonProperty("seoDescription")]
-      public string seoDescription { get; set; }
-    
-      [JsonProperty("seoKeywords")]
-      public string seoKeywords { get; set; }
-    
-      [JsonProperty("seoCanonicalUrl")]
-      public string seoCanonicalUrl { get; set; }
-    
-      [JsonProperty("seoOptions")]
-      public List<MultipleChoiceOption> seoOptions { get; set; }
-    
-      [JsonProperty("seo")]
-      public Seo seo { get; set; }
+      [JsonProperty("_seo")]
+      public Seo _seo { get; set; }
       #endregion
     }
     #endregion
     
-    #region HomepageCollection
-    public class HomepageCollection {
+    #region Homepage_All
+    public class Homepage_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1007,30 +1132,49 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region HomepageWhere
-    public class HomepageWhere {
+    #region Homepage_Subpages_Collection
+    public class Homepage_Subpages_Collection {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
     
-      public string subpagesLinksCodename { get; set; }
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
     
-      public string contentLinksCodename { get; set; }
+      [JsonProperty("items")]
+      public List<NavigationItem> items { get; set; }
+      #endregion
+    }
+    #endregion
     
-      public string slugEq { get; set; }
+    #region Homepage_Where
+    public class Homepage_Where {
+      #region members
+      public _SystemFilter _system_ { get; set; }
     
-      public string labelEq { get; set; }
+      public _ArrayFilter subpages { get; set; }
     
-      public string mainMenuLinksCodename { get; set; }
+      public _ArrayFilter content { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter slug { get; set; }
     
-      public string seoTitleEq { get; set; }
+      public _TextFilter label { get; set; }
     
-      public string seoDescriptionEq { get; set; }
+      public _ArrayFilter mainMenu { get; set; }
     
-      public string seoKeywordsEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string seoCanonicalUrlEq { get; set; }
+      public _ArrayFilter font { get; set; }
+    
+      public _ArrayFilter palette { get; set; }
+    
+      public Seo_SnippetFilter _seo { get; set; }
       #endregion
     
       #region methods
@@ -1058,26 +1202,35 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region Icon
-    public class Icon : Item {
+    public class Icon : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("icon")]
-      public List<MultipleChoiceOption> icon { get; set; }
+      public _MultipleChoiceOptionCollection icon { get; set; }
     
       [JsonProperty("iconPosition")]
-      public List<MultipleChoiceOption> iconPosition { get; set; }
+      public _MultipleChoiceOptionCollection iconPosition { get; set; }
       #endregion
     }
     #endregion
     
-    #region IconCollection
-    public class IconCollection {
+    #region Icon_All
+    public class Icon_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1087,10 +1240,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region IconWhere
-    public class IconWhere {
+    #region Icon_Where
+    public class Icon_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
+    
+      public _ArrayFilter icon { get; set; }
+    
+      public _ArrayFilter iconPosition { get; set; }
       #endregion
     
       #region methods
@@ -1117,47 +1274,36 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    public interface Item {
-      [JsonProperty("system")]
-      Sys system { get; set; }
-    }
-    
-    #region ItemsCollection
-    public class ItemsCollection {
-      #region members
-      [JsonProperty("offset")]
-      public int offset { get; set; }
-    
-      [JsonProperty("limit")]
-      public int limit { get; set; }
-    
-      [JsonProperty("items")]
-      public List<Item> items { get; set; }
-      #endregion
-    }
-    #endregion
-    
     #region LandingPage
-    public class LandingPage : Item {
+    public class LandingPage : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("sections")]
-      public ItemsCollection sections { get; set; }
+      public LandingPage_Sections_Collection sections { get; set; }
       #endregion
     }
     #endregion
     
-    #region LandingPageCollection
-    public class LandingPageCollection {
+    #region LandingPage_All
+    public class LandingPage_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1167,14 +1313,35 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region LandingPageWhere
-    public class LandingPageWhere {
+    #region LandingPage_Sections_Collection
+    public class LandingPage_Sections_Collection {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
     
-      public string titleEq { get; set; }
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
     
-      public string sectionsLinksCodename { get; set; }
+      [JsonProperty("items")]
+      public List<LandingPage_Sections> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region LandingPage_Where
+    public class LandingPage_Where {
+      #region members
+      public _SystemFilter _system_ { get; set; }
+    
+      public _TextFilter title { get; set; }
+    
+      public _ArrayFilter sections { get; set; }
       #endregion
     
       #region methods
@@ -1197,68 +1364,18 @@ namespace GraphQLWebStarter.Models.Generated {
         }
         return d;
       }
-      #endregion
-    }
-    #endregion
-    
-    #region Language
-    public class Language {
-      #region members
-      [JsonProperty("system")]
-      public LanguageSys system { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region LanguageFilter
-    public class LanguageFilter {
-      #region members
-      [Required]
-      [JsonRequired]
-      public string language { get; set; }
-      #endregion
-    
-      #region methods
-      public dynamic GetInputObject()
-      {
-        IDictionary<string, object> d = new System.Dynamic.ExpandoObject();
-    
-        var properties = GetType().GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
-        foreach (var propertyInfo in properties)
-        {
-          var value = propertyInfo.GetValue(this);
-          var defaultValue = propertyInfo.PropertyType.IsValueType ? Activator.CreateInstance(propertyInfo.PropertyType) : null;
-    
-          var requiredProp = propertyInfo.GetCustomAttributes(typeof(JsonRequiredAttribute), false).Length > 0;
-    
-          if (requiredProp || value != defaultValue)
-          {
-            d[propertyInfo.Name] = value;
-          }
-        }
-        return d;
-      }
-      #endregion
-    }
-    #endregion
-    
-    #region LanguageSys
-    public class LanguageSys {
-      #region members
-      [JsonProperty("name")]
-      public string name { get; set; }
-    
-      [JsonProperty("codename")]
-      public string codename { get; set; }
       #endregion
     }
     #endregion
     
     #region ListingPage
-    public class ListingPage : Item {
+    public class ListingPage : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
@@ -1269,12 +1386,18 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ListingPageCollection
-    public class ListingPageCollection {
+    #region ListingPage_All
+    public class ListingPage_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1284,14 +1407,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ListingPageWhere
-    public class ListingPageWhere {
+    #region ListingPage_Where
+    public class ListingPage_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string contentTypeEq { get; set; }
+      public _TextFilter contentType { get; set; }
       #endregion
     
       #region methods
@@ -1319,16 +1442,19 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region ListingSection
-    public class ListingSection : Item {
+    public class ListingSection : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
     
       [JsonProperty("subtitle")]
-      public RichText subtitle { get; set; }
+      public _RichText subtitle { get; set; }
     
       [JsonProperty("contentType")]
       public string contentType { get; set; }
@@ -1337,17 +1463,23 @@ namespace GraphQLWebStarter.Models.Generated {
       public string orderBy { get; set; }
     
       [JsonProperty("numberOfItems")]
-      public double numberOfItems { get; set; }
+      public double? numberOfItems { get; set; }
       #endregion
     }
     #endregion
     
-    #region ListingSectionCollection
-    public class ListingSectionCollection {
+    #region ListingSection_All
+    public class ListingSection_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1357,22 +1489,18 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region ListingSectionWhere
-    public class ListingSectionWhere {
+    #region ListingSection_Where
+    public class ListingSection_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string contentTypeEq { get; set; }
+      public _TextFilter contentType { get; set; }
     
-      public string orderByEq { get; set; }
+      public _TextFilter orderBy { get; set; }
     
-      public int? numberOfItemsEq { get; set; }
-    
-      public int? numberOfItemsGt { get; set; }
-    
-      public int? numberOfItemsLt { get; set; }
+      public _NumberFilter numberOfItems { get; set; }
       #endregion
     
       #region methods
@@ -1400,26 +1528,56 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region Menu
-    public class Menu : Item {
+    public class Menu : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("label")]
       public string label { get; set; }
     
       [JsonProperty("actions")]
-      public ItemsCollection actions { get; set; }
+      public Menu_Actions_Collection actions { get; set; }
       #endregion
     }
     #endregion
     
-    #region MenuCollection
-    public class MenuCollection {
+    #region Menu_Actions_Collection
+    public class Menu_Actions_Collection {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      [JsonProperty("items")]
+      public List<Action> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region Menu_All
+    public class Menu_All {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1429,14 +1587,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region MenuWhere
-    public class MenuWhere {
+    #region Menu_Where
+    public class Menu_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string labelEq { get; set; }
+      public _TextFilter label { get; set; }
     
-      public string actionsLinksCodename { get; set; }
+      public _ArrayFilter actions { get; set; }
       #endregion
     
       #region methods
@@ -1463,32 +1621,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region MultipleChoiceOption
-    public class MultipleChoiceOption {
-      #region members
-      [JsonProperty("system")]
-      public MultipleChoiceOptionSys system { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region MultipleChoiceOptionSys
-    public class MultipleChoiceOptionSys {
-      #region members
-      [JsonProperty("name")]
-      public string name { get; set; }
-    
-      [JsonProperty("codename")]
-      public string codename { get; set; }
-      #endregion
-    }
-    #endregion
-    
     #region NavigationItem
-    public class NavigationItem : Item {
+    public class NavigationItem : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("label")]
       public string label { get; set; }
@@ -1497,38 +1637,29 @@ namespace GraphQLWebStarter.Models.Generated {
       public string slug { get; set; }
     
       [JsonProperty("subpages")]
-      public ItemsCollection subpages { get; set; }
+      public NavigationItem_Subpages_Collection subpages { get; set; }
     
       [JsonProperty("content")]
-      public ItemsCollection content { get; set; }
+      public NavigationItem_Content content { get; set; }
     
-      [JsonProperty("seoTitle")]
-      public string seoTitle { get; set; }
-    
-      [JsonProperty("seoDescription")]
-      public string seoDescription { get; set; }
-    
-      [JsonProperty("seoKeywords")]
-      public string seoKeywords { get; set; }
-    
-      [JsonProperty("seoCanonicalUrl")]
-      public string seoCanonicalUrl { get; set; }
-    
-      [JsonProperty("seoOptions")]
-      public List<MultipleChoiceOption> seoOptions { get; set; }
-    
-      [JsonProperty("seo")]
-      public Seo seo { get; set; }
+      [JsonProperty("_seo")]
+      public Seo _seo { get; set; }
       #endregion
     }
     #endregion
     
-    #region NavigationItemCollection
-    public class NavigationItemCollection {
+    #region NavigationItem_All
+    public class NavigationItem_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1538,26 +1669,41 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region NavigationItemWhere
-    public class NavigationItemWhere {
+    #region NavigationItem_Subpages_Collection
+    public class NavigationItem_Subpages_Collection {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
     
-      public string labelEq { get; set; }
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
     
-      public string slugEq { get; set; }
+      [JsonProperty("items")]
+      public List<NavigationItem> items { get; set; }
+      #endregion
+    }
+    #endregion
     
-      public string subpagesLinksCodename { get; set; }
+    #region NavigationItem_Where
+    public class NavigationItem_Where {
+      #region members
+      public _SystemFilter _system_ { get; set; }
     
-      public string contentLinksCodename { get; set; }
+      public _TextFilter label { get; set; }
     
-      public string seoTitleEq { get; set; }
+      public _TextFilter slug { get; set; }
     
-      public string seoDescriptionEq { get; set; }
+      public _ArrayFilter subpages { get; set; }
     
-      public string seoKeywordsEq { get; set; }
+      public _ArrayFilter content { get; set; }
     
-      public string seoCanonicalUrlEq { get; set; }
+      public Seo_SnippetFilter _seo { get; set; }
       #endregion
     
       #region methods
@@ -1585,13 +1731,16 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region Post
-    public class Post : Item {
+    public class Post : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("persona")]
-      public List<TaxonomyTerm> persona { get; set; }
+      public _TaxonomyTermCollection persona { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
@@ -1606,44 +1755,35 @@ namespace GraphQLWebStarter.Models.Generated {
       public string excerpt { get; set; }
     
       [JsonProperty("image")]
-      public List<Asset> image { get; set; }
+      public _Asset image { get; set; }
     
       [JsonProperty("content")]
-      public RichText content { get; set; }
+      public _RichText content { get; set; }
     
       [JsonProperty("publishingDate")]
-      public DateTime publishingDate { get; set; }
+      public DateTime? publishingDate { get; set; }
     
       [JsonProperty("author")]
-      public ItemsCollection author { get; set; }
+      public Author author { get; set; }
     
-      [JsonProperty("seoTitle")]
-      public string seoTitle { get; set; }
-    
-      [JsonProperty("seoDescription")]
-      public string seoDescription { get; set; }
-    
-      [JsonProperty("seoKeywords")]
-      public string seoKeywords { get; set; }
-    
-      [JsonProperty("seoCanonicalUrl")]
-      public string seoCanonicalUrl { get; set; }
-    
-      [JsonProperty("seoOptions")]
-      public List<MultipleChoiceOption> seoOptions { get; set; }
-    
-      [JsonProperty("seo")]
-      public Seo seo { get; set; }
+      [JsonProperty("_seo")]
+      public Seo _seo { get; set; }
       #endregion
     }
     #endregion
     
-    #region PostCollection
-    public class PostCollection {
+    #region Post_All
+    public class Post_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1653,36 +1793,26 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region PostWhere
-    public class PostWhere {
+    #region Post_Where
+    public class Post_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string personaLinksTerm { get; set; }
+      public _ArrayFilter persona { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string slugEq { get; set; }
+      public _TextFilter slug { get; set; }
     
-      public string subtitleEq { get; set; }
+      public _TextFilter subtitle { get; set; }
     
-      public string excerptEq { get; set; }
+      public _TextFilter excerpt { get; set; }
     
-      public DateTime? publishingDateEq { get; set; }
+      public _DateTimeFilter publishingDate { get; set; }
     
-      public DateTime? publishingDateGt { get; set; }
+      public _ArrayFilter author { get; set; }
     
-      public DateTime? publishingDateLt { get; set; }
-    
-      public string authorLinksCodename { get; set; }
-    
-      public string seoTitleEq { get; set; }
-    
-      public string seoDescriptionEq { get; set; }
-    
-      public string seoKeywordsEq { get; set; }
-    
-      public string seoCanonicalUrlEq { get; set; }
+      public Seo_SnippetFilter _seo { get; set; }
       #endregion
     
       #region methods
@@ -1710,10 +1840,13 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region Quote
-    public class Quote : Item {
+    public class Quote : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("quoteText")]
       public string quoteText { get; set; }
@@ -1721,12 +1854,18 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region QuoteCollection
-    public class QuoteCollection {
+    #region Quote_All
+    public class Quote_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -1736,12 +1875,12 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region QuoteWhere
-    public class QuoteWhere {
+    #region Quote_Where
+    public class Quote_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string quoteTextEq { get; set; }
+      public _TextFilter quoteText { get; set; }
       #endregion
     
       #region methods
@@ -1768,191 +1907,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region RichText
-    public class RichText {
-      #region members
-      [JsonProperty("html")]
-      public string html { get; set; }
-    
-      [JsonProperty("links")]
-      public ItemsCollection links { get; set; }
-    
-      [JsonProperty("modularContent")]
-      public ItemsCollection modularContent { get; set; }
-    
-      [JsonProperty("components")]
-      public ItemsCollection components { get; set; }
-    
-      [JsonProperty("assets")]
-      public AssetCollection assets { get; set; }
-    
-      [JsonProperty("allComponents")]
-      public ItemsCollection allComponents { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region RootQuery
-    public class RootQuery {
-      #region members
-      [JsonProperty("ctaSection")]
-      public CtaSection ctaSection { get; set; }
-    
-      [JsonProperty("ctaSectionCollection")]
-      public CtaSectionCollection ctaSectionCollection { get; set; }
-    
-      [JsonProperty("listingPage")]
-      public ListingPage listingPage { get; set; }
-    
-      [JsonProperty("listingPageCollection")]
-      public ListingPageCollection listingPageCollection { get; set; }
-    
-      [JsonProperty("action")]
-      public Action action { get; set; }
-    
-      [JsonProperty("actionCollection")]
-      public ActionCollection actionCollection { get; set; }
-    
-      [JsonProperty("contactSection")]
-      public ContactSection contactSection { get; set; }
-    
-      [JsonProperty("contactSectionCollection")]
-      public ContactSectionCollection contactSectionCollection { get; set; }
-    
-      [JsonProperty("listingSection")]
-      public ListingSection listingSection { get; set; }
-    
-      [JsonProperty("listingSectionCollection")]
-      public ListingSectionCollection listingSectionCollection { get; set; }
-    
-      [JsonProperty("menu")]
-      public Menu menu { get; set; }
-    
-      [JsonProperty("menuCollection")]
-      public MenuCollection menuCollection { get; set; }
-    
-      [JsonProperty("feature")]
-      public Feature feature { get; set; }
-    
-      [JsonProperty("featureCollection")]
-      public FeatureCollection featureCollection { get; set; }
-    
-      [JsonProperty("quote")]
-      public Quote quote { get; set; }
-    
-      [JsonProperty("quoteCollection")]
-      public QuoteCollection quoteCollection { get; set; }
-    
-      [JsonProperty("selectFormFieldOption")]
-      public SelectFormFieldOption selectFormFieldOption { get; set; }
-    
-      [JsonProperty("selectFormFieldOptionCollection")]
-      public SelectFormFieldOptionCollection selectFormFieldOptionCollection { get; set; }
-    
-      [JsonProperty("selectFormField")]
-      public SelectFormField selectFormField { get; set; }
-    
-      [JsonProperty("selectFormFieldCollection")]
-      public SelectFormFieldCollection selectFormFieldCollection { get; set; }
-    
-      [JsonProperty("landingPage")]
-      public LandingPage landingPage { get; set; }
-    
-      [JsonProperty("landingPageCollection")]
-      public LandingPageCollection landingPageCollection { get; set; }
-    
-      [JsonProperty("featuresSection")]
-      public FeaturesSection featuresSection { get; set; }
-    
-      [JsonProperty("featuresSectionCollection")]
-      public FeaturesSectionCollection featuresSectionCollection { get; set; }
-    
-      [JsonProperty("homepage")]
-      public Homepage homepage { get; set; }
-    
-      [JsonProperty("homepageCollection")]
-      public HomepageCollection homepageCollection { get; set; }
-    
-      [JsonProperty("codeBlock")]
-      public CodeBlock codeBlock { get; set; }
-    
-      [JsonProperty("codeBlockCollection")]
-      public CodeBlockCollection codeBlockCollection { get; set; }
-    
-      [JsonProperty("navigationItem")]
-      public NavigationItem navigationItem { get; set; }
-    
-      [JsonProperty("navigationItemCollection")]
-      public NavigationItemCollection navigationItemCollection { get; set; }
-    
-      [JsonProperty("author")]
-      public Author author { get; set; }
-    
-      [JsonProperty("authorCollection")]
-      public AuthorCollection authorCollection { get; set; }
-    
-      [JsonProperty("form")]
-      public Form form { get; set; }
-    
-      [JsonProperty("formCollection")]
-      public FormCollection formCollection { get; set; }
-    
-      [JsonProperty("heroSection")]
-      public HeroSection heroSection { get; set; }
-    
-      [JsonProperty("heroSectionCollection")]
-      public HeroSectionCollection heroSectionCollection { get; set; }
-    
-      [JsonProperty("simplePage")]
-      public SimplePage simplePage { get; set; }
-    
-      [JsonProperty("simplePageCollection")]
-      public SimplePageCollection simplePageCollection { get; set; }
-    
-      [JsonProperty("post")]
-      public Post post { get; set; }
-    
-      [JsonProperty("postCollection")]
-      public PostCollection postCollection { get; set; }
-    
-      [JsonProperty("externalUrl")]
-      public ExternalUrl externalUrl { get; set; }
-    
-      [JsonProperty("externalUrlCollection")]
-      public ExternalUrlCollection externalUrlCollection { get; set; }
-    
-      [JsonProperty("icon")]
-      public Icon icon { get; set; }
-    
-      [JsonProperty("iconCollection")]
-      public IconCollection iconCollection { get; set; }
-    
-      [JsonProperty("contentSection")]
-      public ContentSection contentSection { get; set; }
-    
-      [JsonProperty("contentSectionCollection")]
-      public ContentSectionCollection contentSectionCollection { get; set; }
-    
-      [JsonProperty("baseFormField")]
-      public BaseFormField baseFormField { get; set; }
-    
-      [JsonProperty("baseFormFieldCollection")]
-      public BaseFormFieldCollection baseFormFieldCollection { get; set; }
-    
-      [JsonProperty("showcase")]
-      public Showcase showcase { get; set; }
-    
-      [JsonProperty("showcaseCollection")]
-      public ShowcaseCollection showcaseCollection { get; set; }
-      #endregion
-    }
-    #endregion
-    
     #region SelectFormField
-    public class SelectFormField : Item {
+    public class SelectFormField : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("label")]
       public string label { get; set; }
@@ -1961,37 +1923,25 @@ namespace GraphQLWebStarter.Models.Generated {
       public string name { get; set; }
     
       [JsonProperty("options")]
-      public ItemsCollection options { get; set; }
+      public SelectFormField_Options_Collection options { get; set; }
     
       [JsonProperty("defaultValue")]
       public string defaultValue { get; set; }
     
       [JsonProperty("configuration")]
-      public List<MultipleChoiceOption> configuration { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region SelectFormFieldCollection
-    public class SelectFormFieldCollection {
-      #region members
-      [JsonProperty("offset")]
-      public int offset { get; set; }
-    
-      [JsonProperty("limit")]
-      public int limit { get; set; }
-    
-      [JsonProperty("items")]
-      public List<SelectFormField> items { get; set; }
+      public _MultipleChoiceOptionCollection configuration { get; set; }
       #endregion
     }
     #endregion
     
     #region SelectFormFieldOption
-    public class SelectFormFieldOption : Item {
+    public class SelectFormFieldOption : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("label")]
       public string label { get; set; }
@@ -2002,12 +1952,18 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region SelectFormFieldOptionCollection
-    public class SelectFormFieldOptionCollection {
+    #region SelectFormFieldOption_All
+    public class SelectFormFieldOption_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -2017,14 +1973,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region SelectFormFieldOptionWhere
-    public class SelectFormFieldOptionWhere {
+    #region SelectFormFieldOption_Where
+    public class SelectFormFieldOption_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string labelEq { get; set; }
+      public _TextFilter label { get; set; }
     
-      public string valueEq { get; set; }
+      public _TextFilter value { get; set; }
       #endregion
     
       #region methods
@@ -2051,18 +2007,62 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region SelectFormFieldWhere
-    public class SelectFormFieldWhere {
+    #region SelectFormField_All
+    public class SelectFormField_All {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
     
-      public string labelEq { get; set; }
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
     
-      public string nameEq { get; set; }
+      [JsonProperty("items")]
+      public List<SelectFormField> items { get; set; }
+      #endregion
+    }
+    #endregion
     
-      public string optionsLinksCodename { get; set; }
+    #region SelectFormField_Options_Collection
+    public class SelectFormField_Options_Collection {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
     
-      public string defaultValueEq { get; set; }
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      [JsonProperty("items")]
+      public List<SelectFormFieldOption> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region SelectFormField_Where
+    public class SelectFormField_Where {
+      #region members
+      public _SystemFilter _system_ { get; set; }
+    
+      public _TextFilter label { get; set; }
+    
+      public _TextFilter name { get; set; }
+    
+      public _ArrayFilter options { get; set; }
+    
+      public _TextFilter defaultValue { get; set; }
+    
+      public _ArrayFilter configuration { get; set; }
       #endregion
     
       #region methods
@@ -2105,84 +2105,23 @@ namespace GraphQLWebStarter.Models.Generated {
       public string canonicalUrl { get; set; }
     
       [JsonProperty("options")]
-      public List<MultipleChoiceOption> options { get; set; }
+      public _MultipleChoiceOptionCollection options { get; set; }
       #endregion
     }
     #endregion
     
-    #region Showcase
-    public class Showcase : Item {
+    #region Seo_SnippetFilter
+    public class Seo_SnippetFilter {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      public _TextFilter title { get; set; }
     
-      [JsonProperty("textElement")]
-      public string textElement { get; set; }
+      public _TextFilter description { get; set; }
     
-      [JsonProperty("numberElement")]
-      public double numberElement { get; set; }
+      public _TextFilter keywords { get; set; }
     
-      [JsonProperty("dateTimeElement")]
-      public DateTime dateTimeElement { get; set; }
+      public _TextFilter canonicalUrl { get; set; }
     
-      [JsonProperty("customElement")]
-      public CustomElement customElement { get; set; }
-    
-      [JsonProperty("assetsElement")]
-      public List<Asset> assetsElement { get; set; }
-    
-      [JsonProperty("multipleChoiceElement")]
-      public List<MultipleChoiceOption> multipleChoiceElement { get; set; }
-    
-      [JsonProperty("persona")]
-      public List<TaxonomyTerm> persona { get; set; }
-    
-      [JsonProperty("linkedItemsElement")]
-      public ItemsCollection linkedItemsElement { get; set; }
-    
-      [JsonProperty("richTextElement")]
-      public RichText richTextElement { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region ShowcaseCollection
-    public class ShowcaseCollection {
-      #region members
-      [JsonProperty("offset")]
-      public int offset { get; set; }
-    
-      [JsonProperty("limit")]
-      public int limit { get; set; }
-    
-      [JsonProperty("items")]
-      public List<Showcase> items { get; set; }
-      #endregion
-    }
-    #endregion
-    
-    #region ShowcaseWhere
-    public class ShowcaseWhere {
-      #region members
-      public string ensureAtLEastOneField { get; set; }
-    
-      public string textElementEq { get; set; }
-    
-      public int? numberElementEq { get; set; }
-    
-      public int? numberElementGt { get; set; }
-    
-      public int? numberElementLt { get; set; }
-    
-      public DateTime? dateTimeElementEq { get; set; }
-    
-      public DateTime? dateTimeElementGt { get; set; }
-    
-      public DateTime? dateTimeElementLt { get; set; }
-    
-      public string personaLinksTerm { get; set; }
-    
-      public string linkedItemsElementLinksCodename { get; set; }
+      public _ArrayFilter options { get; set; }
       #endregion
     
       #region methods
@@ -2210,10 +2149,13 @@ namespace GraphQLWebStarter.Models.Generated {
     #endregion
     
     #region SimplePage
-    public class SimplePage : Item {
+    public class SimplePage : _Item {
       #region members
-      [JsonProperty("system")]
-      public Sys system { get; set; }
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _Sys _system_ { get; set; }
     
       [JsonProperty("title")]
       public string title { get; set; }
@@ -2222,20 +2164,26 @@ namespace GraphQLWebStarter.Models.Generated {
       public string subtitle { get; set; }
     
       [JsonProperty("image")]
-      public List<Asset> image { get; set; }
+      public _Asset image { get; set; }
     
       [JsonProperty("content")]
-      public RichText content { get; set; }
+      public _RichText content { get; set; }
       #endregion
     }
     #endregion
     
-    #region SimplePageCollection
-    public class SimplePageCollection {
+    #region SimplePage_All
+    public class SimplePage_All {
       #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
       [JsonProperty("offset")]
       public int offset { get; set; }
     
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
       [JsonProperty("limit")]
       public int limit { get; set; }
     
@@ -2245,14 +2193,14 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region SimplePageWhere
-    public class SimplePageWhere {
+    #region SimplePage_Where
+    public class SimplePage_Where {
       #region members
-      public string ensureAtLEastOneField { get; set; }
+      public _SystemFilter _system_ { get; set; }
     
-      public string titleEq { get; set; }
+      public _TextFilter title { get; set; }
     
-      public string subtitleEq { get; set; }
+      public _TextFilter subtitle { get; set; }
       #endregion
     
       #region methods
@@ -2279,72 +2227,1048 @@ namespace GraphQLWebStarter.Models.Generated {
     }
     #endregion
     
-    #region Sys
-    public class Sys {
+    #region _ArrayFilter
+    public class _ArrayFilter {
       #region members
+      /// <summary>
+      /// Checks if the field value is an empty array.
+      /// </summary>
+      public bool? isEmpty { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's array values match at least one of the values in the specified array.
+      /// </summary>
+      public List<string> containsAny { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's array values match all values in the specified array.
+      /// </summary>
+      public List<string> containsAll { get; set; }
+      #endregion
+    
+      #region methods
+      public dynamic GetInputObject()
+      {
+        IDictionary<string, object> d = new System.Dynamic.ExpandoObject();
+    
+        var properties = GetType().GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+        foreach (var propertyInfo in properties)
+        {
+          var value = propertyInfo.GetValue(this);
+          var defaultValue = propertyInfo.PropertyType.IsValueType ? Activator.CreateInstance(propertyInfo.PropertyType) : null;
+    
+          var requiredProp = propertyInfo.GetCustomAttributes(typeof(JsonRequiredAttribute), false).Length > 0;
+    
+          if (requiredProp || value != defaultValue)
+          {
+            d[propertyInfo.Name] = value;
+          }
+        }
+        return d;
+      }
+      #endregion
+    }
+    #endregion
+    
+    #region _Asset
+    public class _Asset : _AssetInterface {
+      #region members
+      /// <summary>
+      /// The asset's absolute URL.
+      /// </summary>
+      [JsonProperty("url")]
+      public string url { get; set; }
+    
+      /// <summary>
+      /// The asset's display name.
+      /// </summary>
       [JsonProperty("name")]
       public string name { get; set; }
     
+      /// <summary>
+      /// The asset's alt text description for a specific language.
+      /// </summary>
+      [JsonProperty("description")]
+      public string description { get; set; }
+    
+      /// <summary>
+      /// The file's MIME type.
+      /// </summary>
+      [JsonProperty("type")]
+      public string type { get; set; }
+    
+      /// <summary>
+      /// The file's size in bytes.
+      /// </summary>
+      [JsonProperty("size")]
+      public int? size { get; set; }
+    
+      /// <summary>
+      /// The image's width in pixels.
+      /// </summary>
+      [JsonProperty("width")]
+      public int? width { get; set; }
+    
+      /// <summary>
+      /// The image's height in pixels.
+      /// </summary>
+      [JsonProperty("height")]
+      public int? height { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _AssetCollection
+    public class _AssetCollection {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      /// <summary>
+      /// Individual asset objects.
+      /// </summary>
+      [JsonProperty("items")]
+      public List<_Asset> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    public interface _AssetInterface {
+      /// <summary>
+      /// The asset's absolute URL.
+      /// </summary>
+      [JsonProperty("url")]
+      string url { get; set; }
+    
+      /// <summary>
+      /// The asset's display name.
+      /// </summary>
+      [JsonProperty("name")]
+      string name { get; set; }
+    
+      /// <summary>
+      /// The asset's alt text description for a specific language.
+      /// </summary>
+      [JsonProperty("description")]
+      string description { get; set; }
+    
+      /// <summary>
+      /// The file's MIME type.
+      /// </summary>
+      [JsonProperty("type")]
+      string type { get; set; }
+    
+      /// <summary>
+      /// The file's size in bytes.
+      /// </summary>
+      [JsonProperty("size")]
+      int? size { get; set; }
+    
+      /// <summary>
+      /// The image's width in pixels.
+      /// </summary>
+      [JsonProperty("width")]
+      int? width { get; set; }
+    
+      /// <summary>
+      /// The image's height in pixels.
+      /// </summary>
+      [JsonProperty("height")]
+      int? height { get; set; }
+    }
+    
+    #region _CodenameFilter
+    public class _CodenameFilter {
+      #region members
+      /// <summary>
+      /// Checks if the codename matches exactly to the specified filter value.
+      /// </summary>
+      public string eq { get; set; }
+    
+      /// <summary>
+      /// Checks if the codename is different than the specified value.
+      /// </summary>
+      public string notEq { get; set; }
+    
+      /// <summary>
+      /// Checks if the codename matches at least one of the specified array values.
+      /// </summary>
+      public List<string> @in { get; set; }
+    
+      /// <summary>
+      /// Checks if the codename is different than the specified array values.
+      /// </summary>
+      public List<string> notIn { get; set; }
+      #endregion
+    
+      #region methods
+      public dynamic GetInputObject()
+      {
+        IDictionary<string, object> d = new System.Dynamic.ExpandoObject();
+    
+        var properties = GetType().GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+        foreach (var propertyInfo in properties)
+        {
+          var value = propertyInfo.GetValue(this);
+          var defaultValue = propertyInfo.PropertyType.IsValueType ? Activator.CreateInstance(propertyInfo.PropertyType) : null;
+    
+          var requiredProp = propertyInfo.GetCustomAttributes(typeof(JsonRequiredAttribute), false).Length > 0;
+    
+          if (requiredProp || value != defaultValue)
+          {
+            d[propertyInfo.Name] = value;
+          }
+        }
+        return d;
+      }
+      #endregion
+    }
+    #endregion
+    
+    #region _Collection
+    public class _Collection {
+      #region members
+      /// <summary>
+      /// The collection's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _CollectionSys _system_ { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _CollectionSys
+    public class _CollectionSys {
+      #region members
+      /// <summary>
+      /// The collection's codename.
+      /// </summary>
+      [JsonProperty("codename")]
+      public string codename { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _ContentType
+    public class _ContentType {
+      #region members
+      /// <summary>
+      /// The content type's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _ContentTypeSys _system_ { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _ContentTypeSys
+    public class _ContentTypeSys {
+      #region members
+      /// <summary>
+      /// The content type's display name.
+      /// </summary>
+      [JsonProperty("name")]
+      public string name { get; set; }
+    
+      /// <summary>
+      /// The content type's codename.
+      /// </summary>
+      [JsonProperty("codename")]
+      public string codename { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _DateTimeFilter
+    public class _DateTimeFilter {
+      #region members
+      /// <summary>
+      /// Checks if the field's DateTime value matches exactly to the specified ISO-8610 formatted value.
+      /// </summary>
+      public DateTime? eq { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's DateTime value is different than the specified ISO-8610 formatted value.
+      /// </summary>
+      public DateTime? notEq { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's DateTime value is less than the specified ISO-8610 formatted value.
+      /// </summary>
+      public DateTime? lt { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's DateTime value is less than or equal to the specified ISO-8610 formatted value.
+      /// </summary>
+      public DateTime? lte { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's DateTime value is greater than the specified ISO-8610 formatted value.
+      /// </summary>
+      public DateTime? gt { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's DateTime value is greater than or equal to the specified ISO-8610 formatted value.
+      /// </summary>
+      public DateTime? gte { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's DateTime value matches at least one of the specified array values.
+      /// </summary>
+      public List<DateTime> @in { get; set; }
+    
+      /// <summary>
+      /// Checks if the field's DateTime value is different than the specified array values.
+      /// </summary>
+      public List<DateTime> notIn { get; set; }
+      #endregion
+    
+      #region methods
+      public dynamic GetInputObject()
+      {
+        IDictionary<string, object> d = new System.Dynamic.ExpandoObject();
+    
+        var properties = GetType().GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+        foreach (var propertyInfo in properties)
+        {
+          var value = propertyInfo.GetValue(this);
+          var defaultValue = propertyInfo.PropertyType.IsValueType ? Activator.CreateInstance(propertyInfo.PropertyType) : null;
+    
+          var requiredProp = propertyInfo.GetCustomAttributes(typeof(JsonRequiredAttribute), false).Length > 0;
+    
+          if (requiredProp || value != defaultValue)
+          {
+            d[propertyInfo.Name] = value;
+          }
+        }
+        return d;
+      }
+      #endregion
+    }
+    #endregion
+    
+    public interface _Item {
+      /// <summary>
+      /// The content item's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      _Sys _system_ { get; set; }
+    }
+    
+    #region _ItemCollection
+    public class _ItemCollection {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      /// <summary>
+      /// Individual item or component objects.
+      /// </summary>
+      [JsonProperty("items")]
+      public List<_Item> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _Language
+    public class _Language {
+      #region members
+      /// <summary>
+      /// The language's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _LanguageSys _system_ { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _LanguageFilter
+    public class _LanguageFilter {
+      #region members
+      /// <summary>
+      /// Specifies the language's codename.
+      /// </summary>
+      [Required]
+      [JsonRequired]
+      public string languageCodename { get; set; }
+      #endregion
+    
+      #region methods
+      public dynamic GetInputObject()
+      {
+        IDictionary<string, object> d = new System.Dynamic.ExpandoObject();
+    
+        var properties = GetType().GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+        foreach (var propertyInfo in properties)
+        {
+          var value = propertyInfo.GetValue(this);
+          var defaultValue = propertyInfo.PropertyType.IsValueType ? Activator.CreateInstance(propertyInfo.PropertyType) : null;
+    
+          var requiredProp = propertyInfo.GetCustomAttributes(typeof(JsonRequiredAttribute), false).Length > 0;
+    
+          if (requiredProp || value != defaultValue)
+          {
+            d[propertyInfo.Name] = value;
+          }
+        }
+        return d;
+      }
+      #endregion
+    }
+    #endregion
+    
+    #region _LanguageSys
+    public class _LanguageSys {
+      #region members
+      /// <summary>
+      /// The language's display name.
+      /// </summary>
+      [JsonProperty("name")]
+      public string name { get; set; }
+    
+      /// <summary>
+      /// The language's codename.
+      /// </summary>
+      [JsonProperty("codename")]
+      public string codename { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _MultipleChoiceOption
+    public class _MultipleChoiceOption {
+      #region members
+      /// <summary>
+      /// The multiple choice option's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _MultipleChoiceOptionSys _system_ { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _MultipleChoiceOptionCollection
+    public class _MultipleChoiceOptionCollection {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      /// <summary>
+      /// Individual multiple choice option objects.
+      /// </summary>
+      [JsonProperty("items")]
+      public List<_MultipleChoiceOption> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _MultipleChoiceOptionSys
+    public class _MultipleChoiceOptionSys {
+      #region members
+      /// <summary>
+      /// The multiple choice option's display name.
+      /// </summary>
+      [JsonProperty("name")]
+      public string name { get; set; }
+    
+      /// <summary>
+      /// The multiple choice option's codename.
+      /// </summary>
+      [JsonProperty("codename")]
+      public string codename { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _NumberFilter
+    public class _NumberFilter {
+      #region members
+      /// <summary>
+      /// Checks if the field value matches exactly to the specified float value.
+      /// </summary>
+      public double? eq { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is different than the specified float value.
+      /// </summary>
+      public double? notEq { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is less than the specified float value.
+      /// </summary>
+      public double? lt { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is less than or equal to the specified float value.
+      /// </summary>
+      public double? lte { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is greater than the specified float value.
+      /// </summary>
+      public double? gt { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is greater than or equal to the specified float value.
+      /// </summary>
+      public double? gte { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value matches at least one of the specified array values.
+      /// </summary>
+      public List<double> @in { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is different than the specified array values.
+      /// </summary>
+      public List<double> notIn { get; set; }
+      #endregion
+    
+      #region methods
+      public dynamic GetInputObject()
+      {
+        IDictionary<string, object> d = new System.Dynamic.ExpandoObject();
+    
+        var properties = GetType().GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+        foreach (var propertyInfo in properties)
+        {
+          var value = propertyInfo.GetValue(this);
+          var defaultValue = propertyInfo.PropertyType.IsValueType ? Activator.CreateInstance(propertyInfo.PropertyType) : null;
+    
+          var requiredProp = propertyInfo.GetCustomAttributes(typeof(JsonRequiredAttribute), false).Length > 0;
+    
+          if (requiredProp || value != defaultValue)
+          {
+            d[propertyInfo.Name] = value;
+          }
+        }
+        return d;
+      }
+      #endregion
+    }
+    #endregion
+    
+    #region _RichText
+    public class _RichText {
+      #region members
+      /// <summary>
+      /// The rich text's HTML output. Contains references to assets, links to content items, linked content, and components.
+      /// </summary>
+      [JsonProperty("html")]
+      public string html { get; set; }
+    
+      /// <summary>
+      /// Contains metadata of the content items referenced in hyperlinks.
+      /// </summary>
+      [JsonProperty("itemHyperlinks")]
+      public _ItemCollection itemHyperlinks { get; set; }
+    
+      /// <summary>
+      /// Contains metadata of the assets inserted into the rich text.
+      /// </summary>
+      [JsonProperty("assets")]
+      public _RichTextAssetCollection assets { get; set; }
+    
+      /// <summary>
+      /// Contains metadata of the content items inserted into the rich text.
+      /// </summary>
+      [JsonProperty("linkedItems")]
+      public _ItemCollection linkedItems { get; set; }
+    
+      /// <summary>
+      /// Contains metadata of the components inserted into the rich text.
+      /// </summary>
+      [JsonProperty("components")]
+      public _ItemCollection components { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _RichTextAsset
+    public class _RichTextAsset : _AssetInterface {
+      #region members
+      /// <summary>
+      /// Identifier of the asset as used in the rich text element.
+      /// </summary>
+      [JsonProperty("imageId")]
+      public string imageId { get; set; }
+    
+      /// <summary>
+      /// The asset's absolute URL.
+      /// </summary>
+      [JsonProperty("url")]
+      public string url { get; set; }
+    
+      /// <summary>
+      /// The asset's display name.
+      /// </summary>
+      [JsonProperty("name")]
+      public string name { get; set; }
+    
+      /// <summary>
+      /// The asset's alt text description for a specific language.
+      /// </summary>
+      [JsonProperty("description")]
+      public string description { get; set; }
+    
+      /// <summary>
+      /// The file's MIME type.
+      /// </summary>
+      [JsonProperty("type")]
+      public string type { get; set; }
+    
+      /// <summary>
+      /// The file's size in bytes.
+      /// </summary>
+      [JsonProperty("size")]
+      public int? size { get; set; }
+    
+      /// <summary>
+      /// The image's width in pixels.
+      /// </summary>
+      [JsonProperty("width")]
+      public int? width { get; set; }
+    
+      /// <summary>
+      /// The image's height in pixels.
+      /// </summary>
+      [JsonProperty("height")]
+      public int? height { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _RichTextAssetCollection
+    public class _RichTextAssetCollection {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      /// <summary>
+      /// Individual asset objects.
+      /// </summary>
+      [JsonProperty("items")]
+      public List<_RichTextAsset> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _RootQuery
+    public class _RootQuery {
+      #region members
+      [JsonProperty("featuresSection")]
+      public FeaturesSection featuresSection { get; set; }
+    
+      [JsonProperty("featuresSection_All")]
+      public FeaturesSection_All featuresSection_All { get; set; }
+    
+      [JsonProperty("menu")]
+      public Menu menu { get; set; }
+    
+      [JsonProperty("menu_All")]
+      public Menu_All menu_All { get; set; }
+    
+      [JsonProperty("navigationItem")]
+      public NavigationItem navigationItem { get; set; }
+    
+      [JsonProperty("navigationItem_All")]
+      public NavigationItem_All navigationItem_All { get; set; }
+    
+      [JsonProperty("contentSection")]
+      public ContentSection contentSection { get; set; }
+    
+      [JsonProperty("contentSection_All")]
+      public ContentSection_All contentSection_All { get; set; }
+    
+      [JsonProperty("icon")]
+      public Icon icon { get; set; }
+    
+      [JsonProperty("icon_All")]
+      public Icon_All icon_All { get; set; }
+    
+      [JsonProperty("codeBlock")]
+      public CodeBlock codeBlock { get; set; }
+    
+      [JsonProperty("codeBlock_All")]
+      public CodeBlock_All codeBlock_All { get; set; }
+    
+      [JsonProperty("selectFormFieldOption")]
+      public SelectFormFieldOption selectFormFieldOption { get; set; }
+    
+      [JsonProperty("selectFormFieldOption_All")]
+      public SelectFormFieldOption_All selectFormFieldOption_All { get; set; }
+    
+      [JsonProperty("action")]
+      public Action action { get; set; }
+    
+      [JsonProperty("action_All")]
+      public Action_All action_All { get; set; }
+    
+      [JsonProperty("quote")]
+      public Quote quote { get; set; }
+    
+      [JsonProperty("quote_All")]
+      public Quote_All quote_All { get; set; }
+    
+      [JsonProperty("listingSection")]
+      public ListingSection listingSection { get; set; }
+    
+      [JsonProperty("listingSection_All")]
+      public ListingSection_All listingSection_All { get; set; }
+    
+      [JsonProperty("heroSection")]
+      public HeroSection heroSection { get; set; }
+    
+      [JsonProperty("heroSection_All")]
+      public HeroSection_All heroSection_All { get; set; }
+    
+      [JsonProperty("homepage")]
+      public Homepage homepage { get; set; }
+    
+      [JsonProperty("homepage_All")]
+      public Homepage_All homepage_All { get; set; }
+    
+      [JsonProperty("feature")]
+      public Feature feature { get; set; }
+    
+      [JsonProperty("feature_All")]
+      public Feature_All feature_All { get; set; }
+    
+      [JsonProperty("simplePage")]
+      public SimplePage simplePage { get; set; }
+    
+      [JsonProperty("simplePage_All")]
+      public SimplePage_All simplePage_All { get; set; }
+    
+      [JsonProperty("post")]
+      public Post post { get; set; }
+    
+      [JsonProperty("post_All")]
+      public Post_All post_All { get; set; }
+    
+      [JsonProperty("author")]
+      public Author author { get; set; }
+    
+      [JsonProperty("author_All")]
+      public Author_All author_All { get; set; }
+    
+      [JsonProperty("baseFormField")]
+      public BaseFormField baseFormField { get; set; }
+    
+      [JsonProperty("baseFormField_All")]
+      public BaseFormField_All baseFormField_All { get; set; }
+    
+      [JsonProperty("form")]
+      public Form form { get; set; }
+    
+      [JsonProperty("form_All")]
+      public Form_All form_All { get; set; }
+    
+      [JsonProperty("contactSection")]
+      public ContactSection contactSection { get; set; }
+    
+      [JsonProperty("contactSection_All")]
+      public ContactSection_All contactSection_All { get; set; }
+    
+      [JsonProperty("selectFormField")]
+      public SelectFormField selectFormField { get; set; }
+    
+      [JsonProperty("selectFormField_All")]
+      public SelectFormField_All selectFormField_All { get; set; }
+    
+      [JsonProperty("externalUrl")]
+      public ExternalUrl externalUrl { get; set; }
+    
+      [JsonProperty("externalUrl_All")]
+      public ExternalUrl_All externalUrl_All { get; set; }
+    
+      [JsonProperty("landingPage")]
+      public LandingPage landingPage { get; set; }
+    
+      [JsonProperty("landingPage_All")]
+      public LandingPage_All landingPage_All { get; set; }
+    
+      [JsonProperty("listingPage")]
+      public ListingPage listingPage { get; set; }
+    
+      [JsonProperty("listingPage_All")]
+      public ListingPage_All listingPage_All { get; set; }
+    
+      [JsonProperty("ctaSection")]
+      public CtaSection ctaSection { get; set; }
+    
+      [JsonProperty("ctaSection_All")]
+      public CtaSection_All ctaSection_All { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _Sys
+    public class _Sys {
+      #region members
+      /// <summary>
+      /// The content item's display name.
+      /// </summary>
+      [JsonProperty("name")]
+      public string name { get; set; }
+    
+      /// <summary>
+      /// The content item's codename.
+      /// </summary>
       [JsonProperty("codename")]
       public string codename { get; set; }
     
+      /// <summary>
+      /// The language that the item's content is in.
+      /// </summary>
       [JsonProperty("language")]
-      public Language language { get; set; }
+      public _Language language { get; set; }
     
+      /// <summary>
+      /// The content item's type.
+      /// </summary>
       [JsonProperty("type")]
-      public ContentType type { get; set; }
+      public _ContentType type { get; set; }
     
+      /// <summary>
+      /// [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) formatted date and time (e.g. 2021-11-02T13:27:31Z) of the last change to user-content of the item. The value is not affected when changing workflow steps.
+      /// </summary>
       [JsonProperty("lastModified")]
       public DateTime lastModified { get; set; }
     
+      /// <summary>
+      /// The content item's collection. For projects without collection enabled, the value is `default`.
+      /// </summary>
       [JsonProperty("collection")]
-      public Collection collection { get; set; }
+      public _Collection collection { get; set; }
     
+      /// <summary>
+      /// The content item's current workflow step.
+      /// </summary>
       [JsonProperty("workflowStep")]
-      public WorkflowStep workflowStep { get; set; }
+      public _WorkflowStep workflowStep { get; set; }
     
+      /// <summary>
+      /// The content item's internal ID.
+      /// </summary>
       [JsonProperty("id")]
       public Guid id { get; set; }
       #endregion
     }
     #endregion
     
-    #region TaxonomyTerm
-    public class TaxonomyTerm {
+    #region _SystemFilter
+    /// <summary>
+    /// Allows filtering based on system properties.
+    /// </summary>
+    public class _SystemFilter {
       #region members
-      [JsonProperty("system")]
-      public TaxonomyTermSys system { get; set; }
+      /// <summary>
+      /// The content item's display name.
+      /// </summary>
+      public _TextFilter name { get; set; }
+    
+      /// <summary>
+      /// The date and time of the last change to user-content of the item. The value is not affected when changing workflow steps.
+      /// </summary>
+      public _DateTimeFilter lastModified { get; set; }
+    
+      /// <summary>
+      /// The content item's collection.
+      /// </summary>
+      public _CodenameFilter collection { get; set; }
+    
+      /// <summary>
+      /// The content item's current workflow step.
+      /// </summary>
+      public _CodenameFilter workflowStep { get; set; }
+      #endregion
+    
+      #region methods
+      public dynamic GetInputObject()
+      {
+        IDictionary<string, object> d = new System.Dynamic.ExpandoObject();
+    
+        var properties = GetType().GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+        foreach (var propertyInfo in properties)
+        {
+          var value = propertyInfo.GetValue(this);
+          var defaultValue = propertyInfo.PropertyType.IsValueType ? Activator.CreateInstance(propertyInfo.PropertyType) : null;
+    
+          var requiredProp = propertyInfo.GetCustomAttributes(typeof(JsonRequiredAttribute), false).Length > 0;
+    
+          if (requiredProp || value != defaultValue)
+          {
+            d[propertyInfo.Name] = value;
+          }
+        }
+        return d;
+      }
       #endregion
     }
     #endregion
     
-    #region TaxonomyTermSys
-    public class TaxonomyTermSys {
+    #region _TaxonomyTerm
+    public class _TaxonomyTerm {
       #region members
+      /// <summary>
+      /// The taxonomy term's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _TaxonomyTermSys _system_ { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _TaxonomyTermCollection
+    public class _TaxonomyTermCollection {
+      #region members
+      /// <summary>
+      /// Specifies the number of objects to skip. If not specified, the API returns the first page of results.
+      /// </summary>
+      [JsonProperty("offset")]
+      public int offset { get; set; }
+    
+      /// <summary>
+      /// Specifies the number of items to retrieve. If not specified, the API returns a maximum of 10 objects.
+      /// </summary>
+      [JsonProperty("limit")]
+      public int limit { get; set; }
+    
+      /// <summary>
+      /// Individual taxonomy term objects.
+      /// </summary>
+      [JsonProperty("items")]
+      public List<_TaxonomyTerm> items { get; set; }
+      #endregion
+    }
+    #endregion
+    
+    #region _TaxonomyTermSys
+    public class _TaxonomyTermSys {
+      #region members
+      /// <summary>
+      /// The taxonomy term's display name.
+      /// </summary>
       [JsonProperty("name")]
       public string name { get; set; }
     
+      /// <summary>
+      /// The taxonomy term's codename.
+      /// </summary>
       [JsonProperty("codename")]
       public string codename { get; set; }
       #endregion
     }
     #endregion
     
-    #region WorkflowStep
-    public class WorkflowStep {
+    #region _TextFilter
+    public class _TextFilter {
       #region members
-      [JsonProperty("system")]
-      public WorkflowStepSys system { get; set; }
+      /// <summary>
+      /// Checks if the field value matches exactly to the specified filter value.
+      /// </summary>
+      public string eq { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is different than the specified value.
+      /// </summary>
+      public string notEq { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is an empty string.
+      /// </summary>
+      public bool? isEmpty { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value matches at least one of the specified array values.
+      /// </summary>
+      public List<string> @in { get; set; }
+    
+      /// <summary>
+      /// Checks if the field value is different than the specified array values.
+      /// </summary>
+      public List<string> notIn { get; set; }
+      #endregion
+    
+      #region methods
+      public dynamic GetInputObject()
+      {
+        IDictionary<string, object> d = new System.Dynamic.ExpandoObject();
+    
+        var properties = GetType().GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public);
+        foreach (var propertyInfo in properties)
+        {
+          var value = propertyInfo.GetValue(this);
+          var defaultValue = propertyInfo.PropertyType.IsValueType ? Activator.CreateInstance(propertyInfo.PropertyType) : null;
+    
+          var requiredProp = propertyInfo.GetCustomAttributes(typeof(JsonRequiredAttribute), false).Length > 0;
+    
+          if (requiredProp || value != defaultValue)
+          {
+            d[propertyInfo.Name] = value;
+          }
+        }
+        return d;
+      }
       #endregion
     }
     #endregion
     
-    #region WorkflowStepSys
-    public class WorkflowStepSys {
+    #region _WorkflowStep
+    public class _WorkflowStep {
       #region members
-      [JsonProperty("name")]
-      public string name { get; set; }
+      /// <summary>
+      /// The workflow step's predefined system fields.
+      /// </summary>
+      [JsonProperty("_system_")]
+      public _WorkflowStepSys _system_ { get; set; }
+      #endregion
+    }
+    #endregion
     
+    #region _WorkflowStepSys
+    public class _WorkflowStepSys {
+      #region members
+      /// <summary>
+      /// The workflow step's codename.
+      /// </summary>
       [JsonProperty("codename")]
       public string codename { get; set; }
       #endregion

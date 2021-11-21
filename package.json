@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/Simply007/kontent-starter-graphql-net#readme",
   "devDependencies": {
-    "@graphql-codegen/c-sharp": "^4.0.0",
-    "@graphql-codegen/cli": "2.0.1",
-    "@graphql-codegen/introspection": "2.0.0"
+    "@graphql-codegen/c-sharp": "^4.2.1",
+    "@graphql-codegen/cli": "2.3.0",
+    "@graphql-codegen/introspection": "2.1.0"
   },
   "dependencies": {
     "graphql": "^15.5.1"

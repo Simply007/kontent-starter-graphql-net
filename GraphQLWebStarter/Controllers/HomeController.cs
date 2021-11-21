@@ -1,4 +1,5 @@
 ﻿using GraphQL;
+using GraphQL.Client.Abstractions;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
 using GraphQLWebStarter.Models;
@@ -17,11 +18,11 @@ namespace GraphQLWebStarter.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private readonly GraphQLHttpClient client;
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IGraphQLClient _client;
+        public HomeController(ILogger<HomeController> logger, IGraphQLClient client)
         {
             _logger = logger;
-            client = new GraphQLHttpClient("https://qa-graphql-deliver.global.ssl.fastly.net/graphql/ce50141b-c42b-01d8-c0b6-349de8c50622", new NewtonsoftJsonSerializer());
+            _client = client;
         }
 
         public async Task<IActionResult> Index()
@@ -32,20 +33,18 @@ namespace GraphQLWebStarter.Controllers
 {
   homepage(codename: ""homepage"") {
     content {
-      items {
-        ... on LandingPage {
-          sections {
-            items {
-              ... on HeroSection {
-                title
-                image {
-                  url
-                  description
-                  name
-                }
-                content {
-                  html
-                }
+      ... on LandingPage {
+        sections {
+          items {
+            ... on HeroSection {
+              title
+              image {
+                url
+                description
+                name
+              }
+              content {
+                html
               }
             }
           }
@@ -58,17 +57,17 @@ namespace GraphQLWebStarter.Controllers
             };
 
 
-            var graphQLResponse = await client.SendQueryAsync<object>(homepageRequest);
+            var graphQLResponse = await _client.SendQueryAsync<object>(homepageRequest);
 
-            dynamic heroSection = (graphQLResponse.Data as dynamic).homepage.content.items[0].sections.items[0];
+            dynamic heroSection = (graphQLResponse.Data as dynamic).homepage.content.sections.items[0];
 
             var model = new HomepageViewModel
             {
                 Title = heroSection.title.Value,
                 Content = heroSection.content.html.Value,
-                ImageUrl = heroSection.image[0].url.Value,
-                ImageDescription = heroSection.image[0].description.Value,
-                ImageName = heroSection.image[0].name.Value,
+                ImageUrl = heroSection.image.url.Value,
+                ImageDescription = heroSection.image.description.Value,
+                ImageName = heroSection.image.name.Value,
             };
 
             return View(model);

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
+using FluentAssertions;
+using FluentAssertions.Execution;
 using GraphQL;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
@@ -14,12 +17,12 @@ namespace GraphQLWebStarter.Tests
 
         public StronglyTypedResponse()
         {
-            client = new GraphQLHttpClient("https://qa-graphql-deliver.global.ssl.fastly.net/graphql/ce50141b-c42b-01d8-c0b6-349de8c50622", new NewtonsoftJsonSerializer());
+            client = new GraphQLHttpClient("https://graphql.kontent.ai/ad25961e-f934-01dc-e1fa-f4dd41b84df2", new NewtonsoftJsonSerializer());
         }
 
         public class ResponseType
         {
-            public Homepage Homepage { get; set; }
+            public Homepage? Homepage { get; set; }
         }
 
         [Fact]
@@ -31,14 +34,28 @@ namespace GraphQLWebStarter.Tests
 {
   homepage(codename: ""homepage"") {
     label
+    mainMenu {
+      label
+      actions {
+        items {
+          label
+        }
+      }
+    }
   }
 }
 "
             };
             var graphQLResponse = await client.SendQueryAsync<ResponseType>(homepageRequest);
 
-            Assert.Equal("Home", graphQLResponse.Data.Homepage.label);
-
+            using (new AssertionScope())
+            {
+                graphQLResponse.Data.Homepage?.label.Should().Be("Home");
+                graphQLResponse.Data.Homepage?.mainMenu.actions.items
+                .Select(item => item.label)
+                .Should()
+                .BeEquivalentTo(new[] { "Features", "Blog", "Style Guide", "About Us", "Contact" });
+            }
 
         }
     }

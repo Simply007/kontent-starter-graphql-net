@@ -9,7 +9,7 @@
 
 ### Generate models
 
-1. Enter the project toot directory (with `GraphQLWebStarter.sln` file)
+1. Enter the project to directory (with `package.json` file)
 1. Install dependencies
 
     ```sh
@@ -24,17 +24,34 @@
 
 ### Start
 
+> You need to [generate models first](#generate-models).
+
 1. Enter the project toot directory (with `GraphQLWebStarter.sln` file)
-1. Install dependencies
+1. build solution
 
     ```sh
-    dotnet restore
+    dotnet build
     ```
 
 1. Run the application
 
    ```sh
    dotnet run --project ./GraphQLWebStarter
+   ```
+
+### Tests
+
+1. Enter the project toot directory (with `GraphQLWebStarter.sln` file)
+1. build solution
+
+    ```sh
+    dotnet build
+    ```
+
+1. Run all tests
+
+   ```sh
+   dotnet test
    ```
 
 ## About

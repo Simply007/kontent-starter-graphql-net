@@ -1,5 +1,5 @@
 overwrite: true
-schema: "https://qa-graphql-deliver.global.ssl.fastly.net/graphql/17617a00-4af9-019b-bb0b-8c0b88c1a3e3"
+schema: "https://graphql.kontent.ai/ad25961e-f934-01dc-e1fa-f4dd41b84df2"
 documents: null
 generates:
   GraphQLWebStarter/Models/Generated/KontentTypes.cs:
@@ -9,7 +9,7 @@ generates:
       namespaceName: GraphQLWebStarter.Models.Generated
       className: KontentTypes
       namingConvention: change-case-all#upperCaseFirst
-      # TODO discuss proper and walkthrough all tynamic types
+      # TODO discuss proper and walkthrough all dynamic types
       defaultScalarType: dynamic
       scalars:
         DateTime: DateTime
